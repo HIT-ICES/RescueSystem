@@ -80,7 +80,7 @@ spec:
           env:
             - name: MYSQL_UID
               value: root
-            - name: MYSQL_IP
+            - name: MYSQL_HOST
               value: $APP_NAME-mysql
             - name: MYSQL_PWD
               valueFrom:

@@ -12,7 +12,7 @@ spring:
     activate:
       on-profile: "k8s"
   datasource:
-    url: jdbc:mysql://${MYSQL_IP:127.0.0.1}:3306/statistics?createDatabaseIfNotExist=true
+    url: jdbc:mysql://${MYSQL_HOST:127.0.0.1}:3306/statistics?createDatabaseIfNotExist=true
     username: ${MYSQL_UID:mcs}
     password: ${MYSQL_PWD:T2oNx8eppP6XZCQn}
     driver-class-name: com.mysql.cj.jdbc.Driver
