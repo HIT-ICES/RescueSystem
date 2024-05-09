@@ -15,6 +15,7 @@ K8S_CONF_TMPL ?= $(PROJECT_ROOT)/shared/deploy-$(PROFILE).yaml
 DOCKERFILE_DIR = .
 WORK_DIR = .
 DOCKER = docker
+MAVEN = mvn
 K8S = kubectl -n $(PROJECT)
 K8S_REPLICA ?= 1
 K8S_PROFILE = IMAGE_NAME=$(IMAGE_NAME) APP_NAME=$(APP_NAME) \
@@ -23,7 +24,10 @@ K8S_PROFILE = IMAGE_NAME=$(IMAGE_NAME) APP_NAME=$(APP_NAME) \
 
 .PHONY: default install restart start stop logs uninstall deploy sh status
 
-default:
+maven:
+	$(MAVEN) package
+
+default: maven
 	$(DOCKER) build -f $(DOCKERFILE_DIR)/Dockerfile -t $(IMAGE_NAME) $(WORK_DIR)
 
 publish: default
