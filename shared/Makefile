@@ -43,19 +43,19 @@ profile:
 	$(K8S_PROFILE)
 
 restart:
-	$(K8S) delete pod -l 'app=$(APP_NAME)-$(CMP_NAME)'
+	$(K8S) delete pod -l 'app=$(APP_NAME)'
 
 start:
-	$(K8S) scale deployment -l 'app=$(APP_NAME)-$(CMP_NAME)' --replicas=$(K8S_REPLICA)
+	$(K8S) scale deployment -l 'app=$(APP_NAME)' --replicas=$(K8S_REPLICA)
 
 stop:
-	$(K8S) scale deployment -l 'app=$(APP_NAME)-$(CMP_NAME)' --replicas=0
+	$(K8S) scale deployment -l 'app=$(APP_NAME)' --replicas=0
 
 logs:
-	$(K8S) logs -f -l 'app=$(APP_NAME)-$(CMP_NAME)'
+	$(K8S) logs -f -l 'app=$(APP_NAME)'
 
 status:
-	watch $(K8S) get pods -l 'app=$(APP_NAME)-$(CMP_NAME)'
+	watch $(K8S) get pods -l 'app=$(APP_NAME)'
 
 detail:
-	$(K8S) describe pods -l 'app=$(APP_NAME)-$(CMP_NAME)'
+	$(K8S) describe pods -l 'app=$(APP_NAME)'
