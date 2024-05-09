@@ -1,0 +1,20 @@
+### Test Insert
+POST http://localhost:8080/statistic/data/insert
+accept: application/json
+Content-Type: application/json
+
+
+[
+{"desc":"test"}
+]
+
+### Test Select
+POST http://localhost:8080/statistic/data/select
+accept: application/json
+Content-Type: application/json
+
+{
+"type":"ANY",
+"start":"2024-05-02 16:00:00",
+"end":"2124-05-02 17:00:00"
+}
