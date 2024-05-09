@@ -10,7 +10,7 @@ REPO_NAME ?= 192.168.1.199:5000/rescue-system-2024
 
 
 # Build Conf.
-IMAGE_NAME = $(REPO_NAME)/$(APP_NAME):v{VERSION}
+IMAGE_NAME = $(REPO_NAME)/$(APP_NAME):v${VERSION}
 K8S_CONF_TMPL ?= $(PROJECT_ROOT)/shared/deploy-$(PROFILE).yaml
 DOCKERFILE_DIR = .
 WORK_DIR = .
@@ -24,7 +24,7 @@ K8S_PROFILE = IMAGE_NAME=$(IMAGE_NAME) APP_NAME=$(APP_NAME) \
 .PHONY: default install restart start stop logs uninstall deploy sh status
 
 default:
-	$(DOCKER) build -f $(DOCKERFILE_DIR)/Dockerfile -t $(IMAGE_NAME)
+	$(DOCKER) build -f $(DOCKERFILE_DIR)/Dockerfile -t $(IMAGE_NAME) $(WORK_DIR)
 
 publish: default
 	$(DOCKER) push $(IMAGE_NAME)
