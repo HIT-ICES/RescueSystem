@@ -29,7 +29,7 @@ K8S_PROFILE = IMAGE_NAME=$(IMAGE_NAME) APP_NAME=$(APP_NAME) \
 default:
 	$(DOCKER) build -f $(DOCKERFILE_DIR)/Dockerfile -t $(IMAGE_NAME)
 
-publish: tag
+publish: default
 	$(DOCKER) push $(IMAGE_NAME)
 
 install:
