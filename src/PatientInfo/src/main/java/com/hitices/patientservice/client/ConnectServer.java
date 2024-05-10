@@ -14,7 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
  * @date 2021/11/03
  */
 @Component
-@FeignClient(name = "MedicalGuidance/api/v1/", url = "http://medical-guidance/api/v1/")
+@FeignClient(name = "MedicalGuidance/api/v1/", url = "http://medical-guidance:8080/api/v1/")
 public interface ConnectServer {
 
     @RequestMapping(value = "patientCotroller/registerPatient", method = RequestMethod.POST)
