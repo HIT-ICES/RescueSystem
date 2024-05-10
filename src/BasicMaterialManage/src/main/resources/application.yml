@@ -1,0 +1,23 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: basicmaterialmanage
+  datasource:
+    name: materialDB
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/materialDB?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=GMT%2b8
+    # 宿主机的ip为 172.17.0.1 或 host.docker.internal
+    username: ${MYSQL_UID:mcs}
+    password: ${MYSQL_PWD:T2oNx8eppP6XZCQn}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      # 更新或创建数据表结构
+      ddl-auto: create
+      # 控制台显示 sql
+    show-sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher

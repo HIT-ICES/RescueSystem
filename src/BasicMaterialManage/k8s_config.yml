@@ -1,0 +1,91 @@
+#部署数据库及发布服务
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: materialmanage-mysql
+spec:
+  selector:
+    matchLabels:
+      app: materialmanage-mysql
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: materialmanage-mysql
+    spec:
+      containers:
+        - name: materialmanage-mysql
+          image: mysql:8.0.25
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: root
+          ports:
+            - containerPort: 3306
+          resources:
+            requests:
+              cpu: 50m
+              memory: 100Mi
+      nodeSelector:
+        node: k8s-master
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: materialmanage-mysql
+spec:
+  ports:
+    - port: 3306
+  selector:
+    app: materialmanage-mysql
+
+---
+# 部署 material—manage 及发布服务
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: materialmanage-service
+spec:
+  selector:
+    matchLabels:
+      app: materialmanage-service
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: materialmanage-service
+    spec:
+      containers:
+        - name: materialmanage-service
+          image: 192.168.1.102:5000/mss/basicmaterialmanage
+          imagePullPolicy: Always
+          # args: ["--spring.profiles.active=k8s"]
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              # cpu: 50m
+              memory: 100Mi
+            limits:
+              # cpu: 200m
+              memory: 500Mi
+          env:
+            - name: REGISTRY_IP
+              value: "eureka-server"
+            - name: REGISTRY_PORT
+              value: "8000"
+            - name: MYSQL_HOST
+              value: "materialmanage-mysql"
+      nodeSelector:
+        node: k8s-master
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: materialmanage-service
+spec:
+  ports:
+    - name: http
+      port: 8080
+  selector:
+    app: materialmanage-service

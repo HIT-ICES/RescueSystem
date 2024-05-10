@@ -1,0 +1,9 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+# tool.jar is needed for this module, and its system path depends on the platform
+# including this in ignore list to avoid accident changes
+
+*.idea
+target
+*.iml
+src/test/

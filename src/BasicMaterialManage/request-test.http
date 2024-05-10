@@ -1,0 +1,72 @@
+@base_url = http://localhost:8080
+
+### Test /material/put
+POST {{base_url}}/material/put
+Content-Type: application/json
+
+{
+  "materialId": 1,
+  "number": 7,
+  "userId": 1
+}
+
+### Test /material/take
+POST {{base_url}}/material/take
+Content-Type: application/json
+
+{
+  "materialId": 1,
+  "number": 2,
+  "userId": 1
+}
+
+### Test /material/deleteById
+POST {{base_url}}/material/deleteById
+Content-Type: application/json
+
+{
+  "materialId": 1,
+  "userId": 1
+}
+
+### Test /materialRecord/getByRecordId
+POST {{base_url}}/materialRecord/getByRecordId
+Content-Type: application/json
+
+{
+  "recordId": 1
+}
+
+### Test /materialRecord/getAllByOptUserId
+POST {{base_url}}/materialRecord/getAllByOptUserId
+Content-Type: application/json
+
+{
+  "userId": 1
+}
+
+### Test /materialRecord/getAllByOptUserIdAndDate
+POST {{base_url}}/materialRecord/getAllByOptUserIdAndDate
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "start": "Mon, 1 Jan 2024 18:27:50 CST",
+  "end": "Sat, 4 May 2024 18:27:50 GMT"
+}
+
+### Test /materialRecord/deleteById
+POST {{base_url}}/materialRecord/deleteById
+Content-Type: application/json
+
+{
+  "recordId": 1
+}
+
+### Test /materialRecord/deleteByOptUserId
+POST {{base_url}}/materialRecord/deleteByOptUserId
+Content-Type: application/json
+
+{
+  "userId": 1
+}
