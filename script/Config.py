@@ -8,8 +8,6 @@ ProjectRoot = '..'
 __current_file_path = os.path.abspath(__file__)
 __current_dir_path = os.path.dirname(__current_file_path)
 __project_root = os.path.join(__current_dir_path, ProjectRoot)
-print("Current file path:", current_file_path)
-print("Current directory path:", current_dir_path)
 
 
 SourceDir = os.path.join(__project_root, 'src')
