@@ -10,7 +10,7 @@ tmpl_prefix = ' '*8
 def build_proxy_of_swagger(server):
     return [
         f'{tmpl_prefix}location /swagger/{server} {{',
-        f'{tmpl_prefix}    proxy_pass http://{server}:8080/',
+        f'{tmpl_prefix}    proxy_pass http://{server}:8080/;',
         f'{tmpl_prefix}}}',
         ''
     ]
@@ -19,7 +19,7 @@ def build_proxy_of_swagger(server):
 def build_proxy_of_route(route, server):
     return [
         f'{tmpl_prefix}location {route} {{',
-        f'{tmpl_prefix}    proxy_pass http://{server}:8080',
+        f'{tmpl_prefix}    proxy_pass http://{server}:8080;',
         f'{tmpl_prefix}}}',
         ''
     ]
