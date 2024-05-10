@@ -1,0 +1,20 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: LocalEnvMonitor
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/envMonitorDB?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: ${MYSQL_UID:mcs}
+    password: ${MYSQL_PWD:T2oNx8eppP6XZCQn}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: mysql
+
+# 定时时间：当前为每隔1min触发一次
+timing:
+  cron: 0 0/1 * * * ?
+  min: 1

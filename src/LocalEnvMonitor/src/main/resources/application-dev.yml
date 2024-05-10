@@ -1,0 +1,37 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: LocalEnvMonitor
+  datasource:
+    name: envMonitorDB
+    url: jdbc:mysql://127.0.0.1:3307/materialDB?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=GMT%2b8
+    # 宿主机的ip为 172.17.0.1 或 host.docker.internal
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      # 更新或创建数据表结构
+      ddl-auto: create
+      # 控制台显示 sql
+    show-sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://${REGISTRY_IP}:${REGISTRY_PORT}/eureka
+
+# 定时时间：当前为每隔1min触发一次
+timing:
+  cron: 0 0/1 * * * ?
+  min: 1

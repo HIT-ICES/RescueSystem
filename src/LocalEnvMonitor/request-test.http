@@ -1,0 +1,36 @@
+@base_url = http://localhost:8080
+
+###
+POST {{base_url}}/envmonitor/getByEnvInfoId
+Content-Type: application/json
+
+{
+  "id": 1
+}
+
+###
+POST {{base_url}}/envmonitor/getByPeriod
+Content-Type: application/json
+
+{
+  "start": "2024-01-01",
+  "end": "Sat, 4 May 2024 18:27:50 CST"
+}
+
+###
+POST {{base_url}}/envmonitor/getByPeriod
+Content-Type: application/json
+
+{
+  "start": "2024-01-01",
+  "end": "2024-05-04"
+}
+
+###
+POST {{base_url}}/envmonitor/getByPeriod
+Content-Type: application/json
+
+{
+  "start": "Mon, 1 Jan 2024 18:27:50 CST",
+  "end": "2024-05-04"
+}

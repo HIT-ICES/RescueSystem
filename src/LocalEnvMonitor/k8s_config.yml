@@ -1,0 +1,91 @@
+#部署数据库及发布服务
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: localenvmonitor-mysql
+spec:
+  selector:
+    matchLabels:
+      app: localenvmonitor-mysql
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: localenvmonitor-mysql
+    spec:
+      containers:
+        - name: localenvmonitor-mysql
+          image: mysql:8.0.25
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: root
+          ports:
+            - containerPort: 3306
+          resources:
+            requests:
+              cpu: 50m
+              memory: 100Mi
+      nodeSelector:
+        node: k8s-master
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: localenvmonitor-mysql
+spec:
+  ports:
+    - port: 3306
+  selector:
+    app: localenvmonitor-mysql
+
+---
+# 部署 LocalEnvMonitor 及发布服务
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: local-env-monitor
+spec:
+  selector:
+    matchLabels:
+      app: local-env-monitor
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: local-env-monitor
+    spec:
+      containers:
+        - name: local-env-monitor
+          image: 192.168.1.102:5000/mss/localenvmonitor
+          imagePullPolicy: Always
+          # args: ["--spring.profiles.active=k8s"]
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              # cpu: 50m
+              memory: 100Mi
+            limits:
+              # cpu: 200m
+              memory: 500Mi
+          env:
+            - name: REGISTRY_IP
+              value: "eureka-server"
+            - name: REGISTRY_PORT
+              value: "8000"
+            - name: MYSQL_HOST
+              value: "localenvmonitor-mysql"
+      nodeSelector:
+        node: k8s-master
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: local-env-monitor
+spec:
+  ports:
+    - name: http
+      port: 8080
+  selector:
+    app: local-env-monitor
