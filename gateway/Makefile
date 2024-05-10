@@ -25,9 +25,7 @@ K8S_PROFILE = IMAGE_NAME=$(IMAGE_NAME) APP_NAME=$(APP_NAME) \
 .PHONY: default install restart start stop logs uninstall deploy sh status
 
 nginx.conf:
-	pushd ..
 	$(PY) ../script/MakeGatewayConf.py
-	popd
 	
 default: nginx.conf
 	$(DOCKER) build -f $(DOCKERFILE_DIR)/Dockerfile -t $(IMAGE_NAME) $(WORK_DIR)
