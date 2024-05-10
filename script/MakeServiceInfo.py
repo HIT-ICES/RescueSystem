@@ -46,7 +46,7 @@ def get_service_from_project(project:ProjectInfo):
       "minor": version[1],
       "patch": version[2]
     },
-    "swaggerUrl": f"http://{project.Name}.{Config.Namespace}.svc.cluster.local/v2/api-docs",
+    "swaggerUrl": f"http://{project.Name}.{Config.Namespace}.svc.cluster.local:8080/v2/api-docs",
     "idleResource": {
       "cpu": 0,
       "ram": 0,
