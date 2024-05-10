@@ -1,0 +1,48 @@
+### Test Insert
+POST http://localhost:8080/rescuerStatus/add
+Content-Type: application/json
+
+{
+  "status": "Active",
+  "desc": "On duty at fire station",
+  "location": "City Center",
+  "rescuerId": 4
+}
+
+### Test Get All By Rescuer Id
+POST http://localhost:8080/rescuerStatus/getAllByRescuerId
+Content-Type: application/json
+
+{
+  "rescuerId": 1
+}
+
+### Test Get All By Rescuer Id Between Date
+POST http://localhost:8080/rescuerStatus/getAllByRescuerIdBetweenDate
+Content-Type: application/json
+
+{
+  "rescuerId": 1,
+  "start": "2024-05-04 00:00:00",
+  "end": "2124-05-04 17:00:00"
+}
+
+### Test Delete By Rescuer Id
+POST http://localhost:8080/rescuerStatus/deleteByRescuerId
+Content-Type: application/json
+
+{
+  "rescuerId":4
+}
+
+### Test Delete By Id
+POST http://localhost:8080/rescuerStatus/deleteById
+Content-Type: application/json
+
+{
+  "id": 4
+}
+
+
+
+
