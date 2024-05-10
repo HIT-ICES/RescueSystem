@@ -2,7 +2,7 @@ import os
 
 
 def get_route_of_project(project_root):
-    pkg_dir = 'src\main\java\com\hitices'
+    pkg_dir = 'src/main/java/com/hitices'
     pkg_name = os.listdir(os.path.join(project_root, pkg_dir))[0]
     routes = []
     controller_dir=os.path.join(project_root, pkg_dir, pkg_name, "controller")
