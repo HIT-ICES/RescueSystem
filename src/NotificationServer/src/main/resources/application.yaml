@@ -1,0 +1,26 @@
+spring:
+  profiles:
+    active: "k8s"
+---
+server:
+  port: 8080
+
+spring:
+  application:
+    name: NotificationServiceServer
+  config:
+    activate:
+      on-profile: "k8s"
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:127.0.0.1}:3306/notification?createDatabaseIfNotExist=true&serverTimezone=CTT
+    username: ${MYSQL_UID:mcs}
+    password: ${MYSQL_PWD:T2oNx8eppP6XZCQn}
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: mysql
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
