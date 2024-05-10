@@ -1,0 +1,7 @@
+### Test detect
+POST http://localhost:8080/imageai/detect
+Content-Type: application/json
+
+{
+  "img": "hello"
+}
