@@ -9,7 +9,7 @@ spec:
     - port: 8080 # change this to the desired port if needed
       protocol: TCP
       targetPort: 8080 # change this to the desired port if needed
-      nodePort: 32808 # change this to the desired port if needed
+      nodePort: 31808 # change this to the desired port if needed
   type: NodePort
   selector:
     app: gateway
