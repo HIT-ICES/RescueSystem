@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @date 2021/11/08
  */
 @Component
-@FeignClient(name = "BasicUser/user", url = "http://basicuser:8080/user")
+@FeignClient(name = "BasicUser/user", url = "http://basic-user:8080/user")
 public interface BasicUserClient {
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
  * @date 2021/11/27 10:58
  * @desc
  */
-@FeignClient(name = "RescuerInfoManage", url = "http://rescuerinfomanage:8080/rescuer")
+@FeignClient(name = "RescuerInfoManage", url = "http://rescuer-info-manage:8080/rescuer")
 public interface RescuerInfoManageService {
 
     @PostMapping("/getById")
