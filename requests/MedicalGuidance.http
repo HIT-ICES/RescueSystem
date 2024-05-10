@@ -1,0 +1,37 @@
+### 上传文件
+POST http://localhost:8080/api/v1/videos/uploadFile
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="field-name"; filename="file.txt"
+
+< request.http
+--WebAppBoundary--
+
+
+### 注册病人信息
+POST http://localhost:8080/api/v1/patientCotroller/registerPatient
+Content-Type: application/json
+
+{
+  "patentId": "1",
+  "patienName": "Wang Yi",
+  "sex": 0,
+  "old": 19,
+  "telephoneNumber": "13224841356",
+  "idNumber": "152322200612034512"
+}
+
+
+### 注册医师信息
+POST http://localhost:8080/doctorController/registerDoctor
+Content-Type: application/json
+
+{
+  "name": "Li Xiang",
+  "tel": "",
+  "Number": "",
+  "illType": 1
+}
+
+###

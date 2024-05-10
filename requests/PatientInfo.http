@@ -1,0 +1,46 @@
+### 上传文件
+POST http://localhost:8080/videos/uploadFile
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="field-name"; filename="file.txt"
+
+< request.http
+--WebAppBoundary--
+
+### 查询文件
+GET http://localhost:8080/videos/file
+Accept: application/json
+
+### 查询病理信息
+POST http://localhost:8080/api/v1/patientcontroller/getPatientillnessInfo
+Content-Type: application/json
+
+{
+  "name": "Zhang San",
+  "IDNum": "2"
+}
+
+### 查询病人信息
+POST http://localhost:8080/api/v1/patientcontroller/getPatientBasicInfo
+Content-Type: application/json
+
+{
+  "name": "Zhang San",
+  "IDNum": "2"
+}
+
+### 添加病人信息
+POST http://localhost:8080/api/v1/patientcontroller/add
+Content-Type: application/json
+
+{
+  "patentId": "2",
+  "patienName": "Zhang San",
+  "sex": 1,
+  "old": 29,
+  "telephoneNumber": "13454841356",
+  "idNumber": "152234200612034512"
+}
+
+###
