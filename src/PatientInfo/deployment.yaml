@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: PatientInfo
+spec:
+  ports:
+    - port: 80 # change this to the desired port if needed
+  selector:
+    app: PatientInfo
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: PatientInfo # change this to the desired name if needed
+spec:
+  selector:
+    matchLabels:
+      app: PatientInfo # change this to the desired label if needed
+  template:
+    metadata:
+      labels:
+        app: PatientInfo # change this to the desired label if needed
+    spec:
+      containers:
+        - image: docker.io/clrain/patient_info:latest # change this to the desired image if needed
+          name: PatientInfo # change this to the desired name if needed
+          env:
+            - name: MYSQL_UID
+              value: root
+            - name: MYSQL_HOST
+              value: PatientInfo-mysql
+            - name: MYSQL_PWD
+              valueFrom:
+                secretKeyRef:
+                  name: PatientInfo-mysql-secret # reference the secret created above, change this to the desired name if needed
+                  key: password # reference the key in the secret, change this to the desired key if needed
+          ports:
+            - containerPort: 80 # change this to the desired port if needed
+              name: http # change this to the desired name if needed
