@@ -1,0 +1,21 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: LocalEnvStatusWarner
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/localenvstatus?createDatabaseIfNotExist=true&serverTimezone=CTT
+    username: ${MYSQL_UID:mcs}
+    password: ${MYSQL_PWD:T2oNx8eppP6XZCQn}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
