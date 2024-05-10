@@ -25,5 +25,5 @@ feign:
         readTimeout: 80000000
 
 envreport:
-  position: ${LOCAL_POSITION}
-  cloudUrl: ${CLOUD_IP}:${CLOUD_PORT}
+  position: ${LOCAL_POSITION:Harbin}
+  cloudUrl: ${CLOUD_IP:cloud-env-statistics}:${CLOUD_PORT:8080}
