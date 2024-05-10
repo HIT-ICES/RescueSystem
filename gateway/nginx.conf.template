@@ -6,12 +6,11 @@ http {
         index index.html index.htm;
         server_name _;
 
+        $$PROXY_PASS$$
+
         location / {
             try_files $uri $uri/ =404;
         }
-
-        $$PROXY_PASS$$
-
 
     }
 }

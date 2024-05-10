@@ -1,17 +1,17 @@
 # App Conf.
-APP_NAME = rescue-system-gateway
+APP_NAME = gateway
 VERSION = 1.0
 PROFILE = withoutsql
 
 # Project Conf.
-PROJECT_ROOT ?=../..
+PROJECT_ROOT ?=..
 PROJECT ?= rescue-system-redive
 REPO_NAME ?= 192.168.1.199:5000/rescue-system-2024
 
 
 # Build Conf.
 IMAGE_NAME = $(REPO_NAME)/$(APP_NAME):v${VERSION}
-K8S_CONF_TMPL ?= $(PROJECT_ROOT)/shared/deploy-$(PROFILE).yaml
+K8S_CONF_TMPL ?= deploy.yaml
 DOCKERFILE_DIR = .
 WORK_DIR = .
 DOCKER = docker

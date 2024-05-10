@@ -3,3 +3,4 @@ Namespace='rescue-system-redive'
 
 SourceDir='./src'
 GatewayTemplate='./gateway/nginx.conf.template'
+Gateway='./gateway/nginx.conf'

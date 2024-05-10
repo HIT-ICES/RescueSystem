@@ -1,34 +1,38 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: $APP_NAME
+  name: gateway
   labels:
-    service: $APP_NAME
+    service: gateway
 spec:
   ports:
     - port: 8080 # change this to the desired port if needed
+      protocol: TCP
+      targetPort: 8080 # change this to the desired port if needed
+      nodePort: 38080 # change this to the desired port if needed
+  type: NodePort
   selector:
-    app: $APP_NAME
+    app: gateway
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: $APP_NAME # change this to the desired name if needed
+  name: gateway # change this to the desired name if needed
 spec:
-  replicas: $REPLICAS
+  replicas: 1
   selector:
     matchLabels:
-      app: $APP_NAME # change this to the desired label if needed
+      app: gateway # change this to the desired label if needed
   template:
     metadata:
       labels:
-        app: $APP_NAME # change this to the desired label if needed
-        routectl-name: $APP_NAME
+        app: gateway # change this to the desired label if needed
+        routectl-name: gateway
         routectl-ns: placeholder
     spec:
       containers:
         - image: $IMAGE_NAME # change this to the desired image if needed
-          name: $APP_NAME # change this to the desired name if needed
+          name: gateway # change this to the desired name if needed
           ports:
             - containerPort: 8080 # change this to the desired port if needed
               name: http # change this to the desired name if needed
