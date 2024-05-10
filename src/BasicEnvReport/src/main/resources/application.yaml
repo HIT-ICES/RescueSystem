@@ -1,0 +1,29 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: BasicEnvReport
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      defaultZone: http://${REGISTRY_IP}:${REGISTRY_PORT}/eureka
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 80000000
+        readTimeout: 80000000
+
+envreport:
+  position: ${LOCAL_POSITION}
+  cloudUrl: ${CLOUD_IP}:${CLOUD_PORT}
