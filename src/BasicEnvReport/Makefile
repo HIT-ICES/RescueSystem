@@ -1,7 +1,7 @@
 # App Conf.
 APP_NAME = basic-env-report
 VERSION = 1.0
-PROFILE = withsql
+PROFILE = withoutsql
 
 # Project Conf.
 PROJECT_ROOT ?=../..
