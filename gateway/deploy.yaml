@@ -32,6 +32,7 @@ spec:
     spec:
       containers:
         - image: $IMAGE_NAME # change this to the desired image if needed
+          imagePullPolicy: Always
           name: gateway # change this to the desired name if needed
           ports:
             - containerPort: 8080 # change this to the desired port if needed
