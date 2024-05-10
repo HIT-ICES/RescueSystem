@@ -1,6 +1,6 @@
 # App Conf.
-APP_NAME = basic-env-report
-VERSION = 1.0.2
+APP_NAME = rescue-system-gateway
+VERSION = 1.0
 PROFILE = withoutsql
 
 # Project Conf.
@@ -15,7 +15,7 @@ K8S_CONF_TMPL ?= $(PROJECT_ROOT)/shared/deploy-$(PROFILE).yaml
 DOCKERFILE_DIR = .
 WORK_DIR = .
 DOCKER = docker
-MAVEN = mvn
+PY ?= python
 K8S = kubectl -n $(PROJECT)
 K8S_REPLICA ?= 1
 K8S_PROFILE = IMAGE_NAME=$(IMAGE_NAME) APP_NAME=$(APP_NAME) \
@@ -24,10 +24,12 @@ K8S_PROFILE = IMAGE_NAME=$(IMAGE_NAME) APP_NAME=$(APP_NAME) \
 
 .PHONY: default install restart start stop logs uninstall deploy sh status
 
-maven:
-	$(MAVEN) package
-
-default: maven
+nginx.conf:
+	pushd ..
+	$(PY) ../script/MakeGatewayConf.py
+	popd
+	
+default: nginx.conf
 	$(DOCKER) build -f $(DOCKERFILE_DIR)/Dockerfile -t $(IMAGE_NAME) $(WORK_DIR)
 
 publish: default

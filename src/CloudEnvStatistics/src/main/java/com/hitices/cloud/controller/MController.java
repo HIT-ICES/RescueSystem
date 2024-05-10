@@ -18,12 +18,13 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
+@RequestMapping("/cloud")
 public class MController {
 
     @Autowired
     EnvRepository envRepository;
 
-    @PostMapping(value = "/cloud/insertEnv")
+    @PostMapping(value = "/insertEnv")
     @ApiOperation("收集环境数据")
     public MResponse reportEnvData(@RequestBody EnvDataWithPositionBean environment){
         System.out.println(environment.getTimestamp().toString());
@@ -38,7 +39,7 @@ public class MController {
         return MResponse.successMResponse();
     }
 
-    @PostMapping(value = "/cloud/insertStatus")
+    @PostMapping(value = "/insertStatus")
     @ApiOperation("收集环境状态")
     public MResponse reportEnvStatus(@RequestBody EnvStatusWithPositionBean status){
         EnvInfoEntity envInfoEntity = envRepository.findByTimeAndPosition(status.getTime(),status.getPosition());
@@ -54,7 +55,7 @@ public class MController {
         return MResponse.successMResponse();
     }
 
-    @PostMapping(value = "/cloud/getEnvInfo")
+    @PostMapping(value = "/getEnvInfo")
     @ApiOperation("获取环境信息")
     public MResponse getEnvInfo(@RequestBody EnvInfoFilterBean envInfoFilterBean){
         MResponse response = MResponse.successMResponse();

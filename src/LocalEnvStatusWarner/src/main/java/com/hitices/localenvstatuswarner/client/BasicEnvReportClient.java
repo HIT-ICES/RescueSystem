@@ -10,6 +10,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @FeignClient(name = "BasicEnvReport",url = "http://basic-env-report:8080")
 public interface BasicEnvReportClient {
-    @RequestMapping(value = "/cloud/reportEnvStatus", method = RequestMethod.POST)
+    @RequestMapping(value = "/env-report/reportEnvStatus", method = RequestMethod.POST)
     MResponse reportEnvStatus(@RequestBody EnvStatusBean statusBean);
 }

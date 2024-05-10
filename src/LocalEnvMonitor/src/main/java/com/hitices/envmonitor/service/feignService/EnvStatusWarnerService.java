@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
  * @date 2021/12/15 11:17
  * @desc
  */
-@FeignClient("http://local-env-status-warner:8080")
+@FeignClient("http://local-env-status-warner:8080/status-warn")
 public interface EnvStatusWarnerService {
     @PostMapping("/reportEnvData")
     MResponse reportEnvData(@RequestBody Environment environment);

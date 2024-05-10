@@ -21,6 +21,7 @@ import java.util.Date;
  * 状态信息需要
  */
 @RestController
+@RequestMapping("/status-warn")
 public class MController {
 
     @Autowired
