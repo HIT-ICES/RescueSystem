@@ -6,12 +6,13 @@ import com.hitices.medicalguidance.bean.user.Patient;
 import com.hitices.medicalguidance.dao.DiagnosisDao;
 import com.hitices.medicalguidance.re.DoctorRepository;
 import com.hitices.medicalguidance.utils.TimeChange;
-import com.sun.deploy.util.StringUtils;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import org.apache.tomcat.util.buf.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author Lei
@@ -63,8 +65,8 @@ public class Diagnosis {
                 diagnosis.getIllNessId(),
                 diagnosis.getDoctor().getId(),
                 diagnosis.getResult(),
-                StringUtils.join(Arrays.asList(diagnosis.getMedicine().toArray()), ","),
-                StringUtils.join(Arrays.asList(diagnosis.getCheck().toArray()), ","),
+                StringUtils.join(new ArrayList<String>(diagnosis.getMedicine()), ','),
+                StringUtils.join(new ArrayList<String>(diagnosis.getCheck()), ','),
                 TimeChange.getDateString(diagnosis.getDate()));
     }
 
