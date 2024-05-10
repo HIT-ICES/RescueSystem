@@ -1,0 +1,22 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: CloudEnvStatistics
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/cloudenvdata?createDatabaseIfNotExist=true&serverTimezone=CTT
+    username: ${MYSQL_UID:mcs}
+    password: ${MYSQL_PWD:T2oNx8eppP6XZCQn}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
