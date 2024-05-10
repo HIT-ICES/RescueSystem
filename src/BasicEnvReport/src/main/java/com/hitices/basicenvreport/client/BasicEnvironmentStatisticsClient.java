@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author teng
  * 向异构环境数据收集服务上传数据
  */
-@FeignClient(name = "BasicEnvironmentStatistics", url = "http://basicenvironmentstatistics:8080")
+@FeignClient(name = "BasicEnvironmentStatistics", url = "http://basic-env-statistics:8080")
 public interface BasicEnvironmentStatisticsClient {
     @RequestMapping(value = "/statistic/data/insert", method = RequestMethod.POST)
     MResponse insert(BatchInsertBean batchInsertBean);

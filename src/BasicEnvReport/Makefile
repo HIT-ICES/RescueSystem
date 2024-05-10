@@ -1,6 +1,6 @@
 # App Conf.
 APP_NAME = basic-env-report
-VERSION = 1.0
+VERSION = 1.0.1
 PROFILE = withoutsql
 
 # Project Conf.

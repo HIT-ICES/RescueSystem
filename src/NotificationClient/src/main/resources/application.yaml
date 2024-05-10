@@ -1,0 +1,17 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: NotificationServiceClient
+
+
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      defaultZone: http://${REGISTRY_IP}:${REGISTRY_PORT}/eureka
+#      defaultZone: http://127.0.0.1:8000/eureka
