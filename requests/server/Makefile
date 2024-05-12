@@ -32,7 +32,7 @@ files:
 	mkdir -p build/requests
 	mkdir -p build/script
 	cp ../../requests/*.http build/requests/
-	cp ../../script/*.py build/
+	cp ../../script/*.py build/script
 	
 default: files
 	$(DOCKER) build -f $(DOCKERFILE_DIR)/Dockerfile -t $(IMAGE_NAME) $(WORK_DIR)
