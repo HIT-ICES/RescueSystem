@@ -1,0 +1,42 @@
+### Add User
+POST http://localhost:8080/user/add
+Content-Type: application/json
+
+{
+  "userid": 100,
+  "name": "TestUser",
+  "birthday": "2024-05-12",
+  "email": "test@example.com",
+  "sex":0,
+  "phone": "4008-823-823",
+  "type":0,
+  "password": "password"
+}
+
+### Test Login
+
+POST http://localhost:8080/user/login
+Content-Type: application/json
+
+{
+  "username": "TestUser",
+  "password": "password"
+}
+
+### Test Get-By-Id
+
+POST http://localhost:8080/user/getUserInfoById
+Content-Type: application/json
+
+{
+   "id": 100,
+}
+
+### Test Delete
+
+POST http://localhost:8080/user/remove
+Content-Type: application/json
+
+{
+   "id": 101,
+}
