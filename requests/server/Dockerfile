@@ -11,8 +11,10 @@ COPY Config.py /app/script/
 
 COPY requirements.txt /app
 
+COPY build/script/RequestServer.py /app/script/
+
 # 安装依赖
 RUN pip install --no-cache-dir -r requirements.txt
 
 # 运行脚本
-CMD ["python", "./script/RequestServer.py"]
+CMD ["python", "/app/script/RequestServer.py"]
