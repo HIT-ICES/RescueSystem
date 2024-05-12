@@ -91,4 +91,4 @@ if __name__ == '__main__':
     for http_file in os.listdir(Config.RequestsDir):
         _requests = parse_http_file(os.path.join(Config.RequestsDir, http_file))
         for request in _requests:
-            execute_request(request, 1)
+            execute_request(request)

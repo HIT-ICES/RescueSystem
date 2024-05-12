@@ -1,6 +1,6 @@
 # App Conf.
 APP_NAME = patient-info
-VERSION = 1.0
+VERSION = 1.0.1
 PROFILE = withoutsql
 
 # Project Conf.

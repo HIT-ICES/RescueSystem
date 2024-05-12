@@ -1,0 +1,434 @@
+[
+    {
+        "desiredCapability": 0,
+        "desiredResource": {
+            "cpu": 0,
+            "disk": 0,
+            "gpuCore": 0,
+            "gpuMem": 0,
+            "ram": 0
+        },
+        "id": "rescue-system-redive/basic-env-statistics",
+        "idleResource": {
+            "cpu": 0,
+            "disk": 0,
+            "gpuCore": 0,
+            "gpuMem": 0,
+            "ram": 0
+        },
+        "imageUrl": "192.168.1.199:5000/rescue-system-2024/basic-env-statistics:v1.0",
+        "name": "rescue-system-redive/basic-env-statistics",
+        "repo": "https://github.com/HIT-ICES/RescueSystem",
+        "swaggerUrl": "http://basic-env-statistics.rescue-system-redive.svc.cluster.local:8080/v2/api-docs",
+        "version": {
+            "major": "1",
+            "minor": "0",
+            "patch": "0"
+        }
+    },
+    {
+        "desiredCapability": 0,
+        "desiredResource": {
+            "cpu": 0,
+            "disk": 0,
+            "gpuCore": 0,
+            "gpuMem": 0,
+            "ram": 0
+        },
+        "id": "rescue-system-redive/basic-env-report",
+        "idleResource": {
+            "cpu": 0,
+            "disk": 0,
+            "gpuCore": 0,
+            "gpuMem": 0,
+            "ram": 0
+        },
+        "imageUrl": "192.168.1.199:5000/rescue-system-2024/basic-env-report:v1.0.2",
+        "name": "rescue-system-redive/basic-env-report",
+        "repo": "https://github.com/HIT-ICES/RescueSystem",
+        "swaggerUrl": "http://basic-env-report.rescue-system-redive.svc.cluster.local:8080/v2/api-docs",
+        "version": {
+            "major": "1",
+            "minor": "0",
+            "patch": "2"
+        }
+    },
+    {
+        "desiredCapability": 0,
+        "desiredResource": {
+            "cpu": 0,
+            "disk": 0,
+            "gpuCore": 0,
+            "gpuMem": 0,
+            "ram": 0
+        },
+        "id": "rescue-system-redive/basic-env-status-infer",
+        "idleResource": {
+            "cpu": 0,
+            "disk": 0,
+            "gpuCore": 0,
+            "gpuMem": 0,
+            "ram": 0
+        },
+        "imageUrl": "192.168.1.199:5000/rescue-system-2024/basic-env-status-infer:v1.0",
+        "name": "rescue-system-redive/basic-env-status-infer",
+        "repo": "https://github.com/HIT-ICES/RescueSystem",
+        "swaggerUrl": "http://basic-env-status-infer.rescue-system-redive.svc.cluster.local:8080/v2/api-docs",
+        "version": {
+            "major": "1",
+            "minor": "0",
+            "patch": "0"
+        }
+    },
+    {
+        "desiredCapability": 0,
+        "desiredResource": {
+            "cpu": 0,
+            "disk": 0,
+            "gpuCore": 0,
+            "gpuMem": 0,
+            "ram": 0
+        },
+        "id": "rescue-system-redive/basic-image-ai",
+        "idleResource": {
+            "cpu": 0,
+            "disk": 0,
+            "gpuCore": 0,
+            "gpuMem": 0,
+            "ram": 0
+        },
+        "imageUrl": "192.168.1.199:5000/rescue-system-2024/basic-image-ai:v1.0",
+        "name": "rescue-system-redive/basic-image-ai",
+        "repo": "https://github.com/HIT-ICES/RescueSystem",
+        "swaggerUrl": "http://basic-image-ai.rescue-system-redive.svc.cluster.local:8080/v2/api-docs",
+        "version": {
+            "major": "1",
+            "minor": "0",
+            "patch": "0"
+        }
+    },
+    {
+        "desiredCapability": 0,
+        "desiredResource": {
+            "cpu": 0,
+            "disk": 0,
+            "gpuCore": 0,
+            "gpuMem": 0,
+            "ram": 0
+        },
+        "id": "rescue-system-redive/basic-material-manage",
+        "idleResource": {
+            "cpu": 0,
+            "disk": 0,
+            "gpuCore": 0,
+            "gpuMem": 0,
+            "ram": 0
+        },
+        "imageUrl": "192.168.1.199:5000/rescue-system-2024/basic-material-manage:v1.0",
+        "name": "rescue-system-redive/basic-material-manage",
+        "repo": "https://github.com/HIT-ICES/RescueSystem",
+        "swaggerUrl": "http://basic-material-manage.rescue-system-redive.svc.cluster.local:8080/v2/api-docs",
+        "version": {
+            "major": "1",
+            "minor": "0",
+            "patch": "0"
+        }
+    },
+    {
+        "desiredCapability": 0,
+        "desiredResource": {
+            "cpu": 0,
+            "disk": 0,
+            "gpuCore": 0,
+            "gpuMem": 0,
+            "ram": 0
+        },
+        "id": "rescue-system-redive/basic-ocr",
+        "idleResource": {
+            "cpu": 0,
+            "disk": 0,
+            "gpuCore": 0,
+            "gpuMem": 0,
+            "ram": 0
+        },
+        "imageUrl": "192.168.1.199:5000/rescue-system-2024/basic-ocr:v1.0",
+        "name": "rescue-system-redive/basic-ocr",
+        "repo": "https://github.com/HIT-ICES/RescueSystem",
+        "swaggerUrl": "http://basic-ocr.rescue-system-redive.svc.cluster.local:8080/v2/api-docs",
+        "version": {
+            "major": "1",
+            "minor": "0",
+            "patch": "0"
+        }
+    },
+    {
+        "desiredCapability": 0,
+        "desiredResource": {
+            "cpu": 0,
+            "disk": 0,
+            "gpuCore": 0,
+            "gpuMem": 0,
+            "ram": 0
+        },
+        "id": "rescue-system-redive/basic-user",
+        "idleResource": {
+            "cpu": 0,
+            "disk": 0,
+            "gpuCore": 0,
+            "gpuMem": 0,
+            "ram": 0
+        },
+        "imageUrl": "192.168.1.199:5000/rescue-system-2024/basic-user:v1.0",
+        "name": "rescue-system-redive/basic-user",
+        "repo": "https://github.com/HIT-ICES/RescueSystem",
+        "swaggerUrl": "http://basic-user.rescue-system-redive.svc.cluster.local:8080/v2/api-docs",
+        "version": {
+            "major": "1",
+            "minor": "0",
+            "patch": "0"
+        }
+    },
+    {
+        "desiredCapability": 0,
+        "desiredResource": {
+            "cpu": 0,
+            "disk": 0,
+            "gpuCore": 0,
+            "gpuMem": 0,
+            "ram": 0
+        },
+        "id": "rescue-system-redive/cloud-env-statistics",
+        "idleResource": {
+            "cpu": 0,
+            "disk": 0,
+            "gpuCore": 0,
+            "gpuMem": 0,
+            "ram": 0
+        },
+        "imageUrl": "192.168.1.199:5000/rescue-system-2024/cloud-env-statistics:v1.0",
+        "name": "rescue-system-redive/cloud-env-statistics",
+        "repo": "https://github.com/HIT-ICES/RescueSystem",
+        "swaggerUrl": "http://cloud-env-statistics.rescue-system-redive.svc.cluster.local:8080/v2/api-docs",
+        "version": {
+            "major": "1",
+            "minor": "0",
+            "patch": "0"
+        }
+    },
+    {
+        "desiredCapability": 0,
+        "desiredResource": {
+            "cpu": 0,
+            "disk": 0,
+            "gpuCore": 0,
+            "gpuMem": 0,
+            "ram": 0
+        },
+        "id": "rescue-system-redive/local-env-monitor",
+        "idleResource": {
+            "cpu": 0,
+            "disk": 0,
+            "gpuCore": 0,
+            "gpuMem": 0,
+            "ram": 0
+        },
+        "imageUrl": "192.168.1.199:5000/rescue-system-2024/local-env-monitor:v1.0.1",
+        "name": "rescue-system-redive/local-env-monitor",
+        "repo": "https://github.com/HIT-ICES/RescueSystem",
+        "swaggerUrl": "http://local-env-monitor.rescue-system-redive.svc.cluster.local:8080/v2/api-docs",
+        "version": {
+            "major": "1",
+            "minor": "0",
+            "patch": "1"
+        }
+    },
+    {
+        "desiredCapability": 0,
+        "desiredResource": {
+            "cpu": 0,
+            "disk": 0,
+            "gpuCore": 0,
+            "gpuMem": 0,
+            "ram": 0
+        },
+        "id": "rescue-system-redive/local-env-status-warner",
+        "idleResource": {
+            "cpu": 0,
+            "disk": 0,
+            "gpuCore": 0,
+            "gpuMem": 0,
+            "ram": 0
+        },
+        "imageUrl": "192.168.1.199:5000/rescue-system-2024/local-env-status-warner:v1.0.1",
+        "name": "rescue-system-redive/local-env-status-warner",
+        "repo": "https://github.com/HIT-ICES/RescueSystem",
+        "swaggerUrl": "http://local-env-status-warner.rescue-system-redive.svc.cluster.local:8080/v2/api-docs",
+        "version": {
+            "major": "1",
+            "minor": "0",
+            "patch": "1"
+        }
+    },
+    {
+        "desiredCapability": 0,
+        "desiredResource": {
+            "cpu": 0,
+            "disk": 0,
+            "gpuCore": 0,
+            "gpuMem": 0,
+            "ram": 0
+        },
+        "id": "rescue-system-redive/medical-guidance",
+        "idleResource": {
+            "cpu": 0,
+            "disk": 0,
+            "gpuCore": 0,
+            "gpuMem": 0,
+            "ram": 0
+        },
+        "imageUrl": "192.168.1.199:5000/rescue-system-2024/medical-guidance:v1.0.1",
+        "name": "rescue-system-redive/medical-guidance",
+        "repo": "https://github.com/HIT-ICES/RescueSystem",
+        "swaggerUrl": "http://medical-guidance.rescue-system-redive.svc.cluster.local:8080/v2/api-docs",
+        "version": {
+            "major": "1",
+            "minor": "0",
+            "patch": "1"
+        }
+    },
+    {
+        "desiredCapability": 0,
+        "desiredResource": {
+            "cpu": 0,
+            "disk": 0,
+            "gpuCore": 0,
+            "gpuMem": 0,
+            "ram": 0
+        },
+        "id": "rescue-system-redive/notification-client",
+        "idleResource": {
+            "cpu": 0,
+            "disk": 0,
+            "gpuCore": 0,
+            "gpuMem": 0,
+            "ram": 0
+        },
+        "imageUrl": "192.168.1.199:5000/rescue-system-2024/notification-client:v1.0",
+        "name": "rescue-system-redive/notification-client",
+        "repo": "https://github.com/HIT-ICES/RescueSystem",
+        "swaggerUrl": "http://notification-client.rescue-system-redive.svc.cluster.local:8080/v2/api-docs",
+        "version": {
+            "major": "1",
+            "minor": "0",
+            "patch": "0"
+        }
+    },
+    {
+        "desiredCapability": 0,
+        "desiredResource": {
+            "cpu": 0,
+            "disk": 0,
+            "gpuCore": 0,
+            "gpuMem": 0,
+            "ram": 0
+        },
+        "id": "rescue-system-redive/notification-server",
+        "idleResource": {
+            "cpu": 0,
+            "disk": 0,
+            "gpuCore": 0,
+            "gpuMem": 0,
+            "ram": 0
+        },
+        "imageUrl": "192.168.1.199:5000/rescue-system-2024/notification-server:v1.0",
+        "name": "rescue-system-redive/notification-server",
+        "repo": "https://github.com/HIT-ICES/RescueSystem",
+        "swaggerUrl": "http://notification-server.rescue-system-redive.svc.cluster.local:8080/v2/api-docs",
+        "version": {
+            "major": "1",
+            "minor": "0",
+            "patch": "0"
+        }
+    },
+    {
+        "desiredCapability": 0,
+        "desiredResource": {
+            "cpu": 0,
+            "disk": 0,
+            "gpuCore": 0,
+            "gpuMem": 0,
+            "ram": 0
+        },
+        "id": "rescue-system-redive/patient-info",
+        "idleResource": {
+            "cpu": 0,
+            "disk": 0,
+            "gpuCore": 0,
+            "gpuMem": 0,
+            "ram": 0
+        },
+        "imageUrl": "192.168.1.199:5000/rescue-system-2024/patient-info:v1.0",
+        "name": "rescue-system-redive/patient-info",
+        "repo": "https://github.com/HIT-ICES/RescueSystem",
+        "swaggerUrl": "http://patient-info.rescue-system-redive.svc.cluster.local:8080/v2/api-docs",
+        "version": {
+            "major": "1",
+            "minor": "0",
+            "patch": "0"
+        }
+    },
+    {
+        "desiredCapability": 0,
+        "desiredResource": {
+            "cpu": 0,
+            "disk": 0,
+            "gpuCore": 0,
+            "gpuMem": 0,
+            "ram": 0
+        },
+        "id": "rescue-system-redive/rescuer-info-center",
+        "idleResource": {
+            "cpu": 0,
+            "disk": 0,
+            "gpuCore": 0,
+            "gpuMem": 0,
+            "ram": 0
+        },
+        "imageUrl": "192.168.1.199:5000/rescue-system-2024/rescuer-info-center:v1.0",
+        "name": "rescue-system-redive/rescuer-info-center",
+        "repo": "https://github.com/HIT-ICES/RescueSystem",
+        "swaggerUrl": "http://rescuer-info-center.rescue-system-redive.svc.cluster.local:8080/v2/api-docs",
+        "version": {
+            "major": "1",
+            "minor": "0",
+            "patch": "0"
+        }
+    },
+    {
+        "desiredCapability": 0,
+        "desiredResource": {
+            "cpu": 0,
+            "disk": 0,
+            "gpuCore": 0,
+            "gpuMem": 0,
+            "ram": 0
+        },
+        "id": "rescue-system-redive/rescuer-info-manage",
+        "idleResource": {
+            "cpu": 0,
+            "disk": 0,
+            "gpuCore": 0,
+            "gpuMem": 0,
+            "ram": 0
+        },
+        "imageUrl": "192.168.1.199:5000/rescue-system-2024/rescuer-info-manage:v1.0",
+        "name": "rescue-system-redive/rescuer-info-manage",
+        "repo": "https://github.com/HIT-ICES/RescueSystem",
+        "swaggerUrl": "http://rescuer-info-manage.rescue-system-redive.svc.cluster.local:8080/v2/api-docs",
+        "version": {
+            "major": "1",
+            "minor": "0",
+            "patch": "0"
+        }
+    }
+]

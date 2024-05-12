@@ -21,7 +21,7 @@ Content-Type: application/json
 
 
 ### 接收信息
-POST http://localhost:8080/client/recieveMessage
+POST http://localhost:8080/client/receiveMessage
 Content-Type: application/json
 
 {
