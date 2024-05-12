@@ -1,0 +1,19 @@
+###
+POST http://localhost:8080/ocr/rec
+Content-Type: application/json
+
+{
+  "data": "dolore aute id",
+  "lang": "eng"
+}
+
+###
+POST http://localhost:8080/ocr/recList
+Content-Type: application/json
+
+{
+  "lang": "eng",
+  "dataList": [
+    "dolore aute id"
+  ]
+}

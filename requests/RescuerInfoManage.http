@@ -1,0 +1,38 @@
+### Test Add A Rescuer
+POST http://localhost:8080/rescuer/add
+Content-Type: application/json
+
+{
+  "name": "zhang san",
+  "type": "doctor",
+  "desc": "On duty at clinic",
+  "status": "Active"
+}
+
+### Test Get Rescuer Data By Id
+POST http://localhost:8080/rescuer/getById
+Content-Type: application/json
+
+{
+  "id": 1
+}
+
+### Test Update A Rescuer Data
+POST http://localhost:8080/rescuer/update`
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "zhang san",
+  "type": "doctor",
+  "desc": "On duty at clinic",
+  "status": "Active"
+}
+
+### Test Delete A Rescuer Data By Id
+POST http://localhost:8080/rescuer/delete
+Content-Type: application/json
+
+{
+  "id": 1
+}

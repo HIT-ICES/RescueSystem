@@ -1,0 +1,47 @@
+### 向云端上报当前环境数据
+POST http://localhost:8080/cloud/reportEnvData
+Content-Type: application/json
+
+{
+    "tp": {
+        "temperature": 65,
+        "type": 0,
+        "timestamp": "2023-10-26 03:38:08"
+    },
+    "hd": {
+        "humidity": 36,
+        "type": 1,
+        "timestamp": "2023-10-26 03:38:08"
+    },
+    "wd": {
+        "windLevel": 90,
+        "windDirection": 71,
+        "type": 2,
+        "timestamp": "2023-10-26 03:38:08"
+    },
+    "wvd": {
+        "WaterVelocityData": 29,
+        "type": 3,
+        "timestamp": "2023-10-26 03:38:08"
+    }
+}
+
+### 向云端上报当前环境状态
+POST http://localhost:8080/cloud/reportEnvStatus
+Content-Type: application/json
+{
+    "status": "veniam pariatur dolor"
+    "time": "2023-10-26 03:38:08"
+}
+
+
+### 向异构环境数据收集服务上报结构化人工数据
+POST http://localhost:8080/data/reportEnvironment
+Content-Type: application/json
+
+{
+  "data": [
+    "data_d2dd933cdb53"
+  ],
+  "schemaId": "schemaId_cc3385314663"
+}

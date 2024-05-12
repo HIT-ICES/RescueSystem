@@ -1,0 +1,39 @@
+### 接受环境信息，并推断出当前环境状态
+POST http://localhost:8080/reportEnvData/
+Content-Type: application/json
+
+{
+    "tp": {
+        "temperature": 65,
+        "type": 0,
+        "timestamp": "2023-10-26 03:38:08"
+    },
+    "hd": {
+        "humidity": 36,
+        "type": 1,
+        "timestamp": "2023-10-26 03:38:08"
+    },
+    "wd": {
+        "windLevel": 90,
+        "windDirection": 71,
+        "type": 2,
+        "timestamp": "2023-10-26 03:38:08"
+    },
+    "wvd": {
+        "WaterVelocityData": 29,
+        "type": 3,
+        "timestamp": "2023-10-26 03:38:08"
+    }
+}
+
+### 获取历史环境状态信息
+POST http://localhost:8080/getStatusByTime
+Content-Type: application/json
+
+{"start": "2023-10-23 03:29:36", "end": "2023-10-26 03:29:36"},
+
+### 获取历史环境警报状态信息
+POST http://localhost:8080/getWarningStatus
+Content-Type: application/json
+
+{"start": "2023-10-23 03:29:36", "end": "2023-10-26 03:29:36"},

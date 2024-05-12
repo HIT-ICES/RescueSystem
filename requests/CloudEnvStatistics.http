@@ -1,0 +1,27 @@
+### Test Add Enviroment Data
+POST http://localhost:8080/cloud/insertEnv
+Content-Type: application/json
+
+{
+  "position": "clinic"
+}
+
+### Test Add Enviroment Status
+POST http://localhost:8080/cloud/insertStatus
+Content-Type: application/json
+
+{
+  "status": "Safe",
+  "position": "clinic",
+  "time": "2024-05-10 22:34:10"
+}
+
+### Test Add Enviroment Infomation
+POST http://localhost:8080/cloud/getEnvInfo
+Content-Type: application/json
+
+{
+  "position": "clinic",
+  "start": "2024-05-10 22:34:15",
+  "end": "2024-05-10 22:35:01"
+}

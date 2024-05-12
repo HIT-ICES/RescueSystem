@@ -1,0 +1,27 @@
+### 根据环境信信息推断当前环境状态
+POST http://localhost:8080/statusInfer/getStatus
+Content-Type: application/json
+
+{
+    "tp": {
+        "temperature": 65,
+        "type": 0,
+        "timestamp": "2023-10-26 03:38:08"
+    },
+    "hd": {
+        "humidity": 36,
+        "type": 1,
+        "timestamp": "2023-10-26 03:38:08"
+    },
+    "wd": {
+        "windLevel": 90,
+        "windDirection": 71,
+        "type": 2,
+        "timestamp": "2023-10-26 03:38:08"
+    },
+    "wvd": {
+        "WaterVelocityData": 29,
+        "type": 3,
+        "timestamp": "2023-10-26 03:38:08"
+    }
+}
