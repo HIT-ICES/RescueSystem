@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @version 0.1
  * @date 2021/11/03
  */
+@RestController
 @RequestMapping("/api/v1/patientCotroller")
 public class PatientController {
 

@@ -1,7 +1,7 @@
 @base_url = http://localhost:8080
 
 ### Test /material/put
-POST {{base_url}}/material/put
+POST http://localhost:8080/material/put
 Content-Type: application/json
 
 {
@@ -11,7 +11,7 @@ Content-Type: application/json
 }
 
 ### Test /material/take
-POST {{base_url}}/material/take
+POST http://localhost:8080/material/take
 Content-Type: application/json
 
 {
@@ -21,7 +21,7 @@ Content-Type: application/json
 }
 
 ### Test /material/deleteById
-POST {{base_url}}/material/deleteById
+POST http://localhost:8080/material/deleteById
 Content-Type: application/json
 
 {
@@ -30,7 +30,7 @@ Content-Type: application/json
 }
 
 ### Test /materialRecord/getByRecordId
-POST {{base_url}}/materialRecord/getByRecordId
+POST http://localhost:8080/materialRecord/getByRecordId
 Content-Type: application/json
 
 {
@@ -38,7 +38,7 @@ Content-Type: application/json
 }
 
 ### Test /materialRecord/getAllByOptUserId
-POST {{base_url}}/materialRecord/getAllByOptUserId
+POST http://localhost:8080/materialRecord/getAllByOptUserId
 Content-Type: application/json
 
 {
@@ -46,7 +46,7 @@ Content-Type: application/json
 }
 
 ### Test /materialRecord/getAllByOptUserIdAndDate
-POST {{base_url}}/materialRecord/getAllByOptUserIdAndDate
+POST http://localhost:8080/materialRecord/getAllByOptUserIdAndDate
 Content-Type: application/json
 
 {
@@ -56,7 +56,7 @@ Content-Type: application/json
 }
 
 ### Test /materialRecord/deleteById
-POST {{base_url}}/materialRecord/deleteById
+POST http://localhost:8080/materialRecord/deleteById
 Content-Type: application/json
 
 {
@@ -64,7 +64,7 @@ Content-Type: application/json
 }
 
 ### Test /materialRecord/deleteByOptUserId
-POST {{base_url}}/materialRecord/deleteByOptUserId
+POST http://localhost:8080/materialRecord/deleteByOptUserId
 Content-Type: application/json
 
 {

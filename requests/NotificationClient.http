@@ -1,6 +1,6 @@
 
 ### radioToClient
-POST http://notification-server/client/radioToCLient HTTP/1.1
+POST http://localhost:8080/client/radioToCLient
 Content-Type: application/json
 
 {
@@ -10,7 +10,7 @@ Content-Type: application/json
 }
 
 ### radioToServer
-POST http://notification-server/client/radioToServer HTTP/1.1
+POST http://localhost:8080/client/radioToServer
 Content-Type: application/json
 
 {
@@ -21,7 +21,7 @@ Content-Type: application/json
 
 
 ### 接收信息
-POST http://notification-server/client/recieveMessage HTTP/1.1
+POST http://localhost:8080/client/recieveMessage
 Content-Type: application/json
 
 {
@@ -37,10 +37,10 @@ Content-Type: application/json
 
 
 ### 注册客户端
-POST http://notification-server/client/seeClients HTTP/1.1
+POST http://localhost:8080/client/seeClients
 
 ### 发送信息
-POST http://notification-server/client/sendMessage HTTP/1.1
+POST http://localhost:8080/client/sendMessage
 Content-Type: application/json
 
 {

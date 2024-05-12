@@ -1,7 +1,7 @@
 @base_url = http://localhost:8080
 
 ###
-POST {{base_url}}/envmonitor/getByEnvInfoId
+POST http://localhost:8080/envmonitor/getByEnvInfoId
 Content-Type: application/json
 
 {
@@ -9,7 +9,7 @@ Content-Type: application/json
 }
 
 ###
-POST {{base_url}}/envmonitor/getByPeriod
+POST http://localhost:8080/envmonitor/getByPeriod
 Content-Type: application/json
 
 {
@@ -18,7 +18,7 @@ Content-Type: application/json
 }
 
 ###
-POST {{base_url}}/envmonitor/getByPeriod
+POST http://localhost:8080/envmonitor/getByPeriod
 Content-Type: application/json
 
 {
@@ -27,7 +27,7 @@ Content-Type: application/json
 }
 
 ###
-POST {{base_url}}/envmonitor/getByPeriod
+POST http://localhost:8080/envmonitor/getByPeriod
 Content-Type: application/json
 
 {

@@ -17,6 +17,7 @@ def build_proxy_of_swagger(server):
 
 
 def build_proxy_of_route(route, server):
+    if not route.startswith('/'): route = '/' + route
     return [
         f'{tmpl_prefix}location {route} {{',
         f'{tmpl_prefix}    proxy_pass http://{server}:8080;',

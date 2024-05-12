@@ -1,9 +1,9 @@
 ### 获取所有客户端信息
-POST http://notification-server/operation/getAllClientInfo HTTP/1.1
+POST http://localhost:8080/operation/getAllClientInfo
 Content-Type: application/json
 
 ### 根据ID获取指定的的客户端信息
-POST http://notification-server/operation/getClientInfoById HTTP/1.1
+POST http://localhost:8080/operation/getClientInfoById
 Content-Type: application/json
 
 {
@@ -11,7 +11,7 @@ Content-Type: application/json
 }
 
 ### radioToClient
-POST http://notification-server/forward/radioToClient HTTP/1.1
+POST http://localhost:8080/forward/radioToClient
 Content-Type: application/json
 
 {
@@ -26,7 +26,7 @@ Content-Type: application/json
 }
 
 ### radioToServer
-POST http://notification-server/forward/radioToServer HTTP/1.1
+POST http://localhost:8080/forward/radioToServer
 Content-Type: application/json
 
 {
@@ -41,7 +41,7 @@ Content-Type: application/json
 }
 
 ### forwardOne
-POST http://notification-server/forward/forwardOne HTTP/1.1
+POST http://localhost:8080/forward/forwardOne
 Content-Type: application/json
 
 {
@@ -56,7 +56,7 @@ Content-Type: application/json
 }
 
 ### 接收信息
-POST http://notification-server/server/recieveMessage HTTP/1.1
+POST http://localhost:8080/server/recieveMessage
 Content-Type: application/json
 
 {
@@ -71,7 +71,7 @@ Content-Type: application/json
 }
 
 ### radioToServer
-POST http://notification-server/server/radioToServer HTTP/1.1
+POST http://localhost:8080/server/radioToServer
 Content-Type: application/json
 
 {
@@ -81,7 +81,7 @@ Content-Type: application/json
 }
 
 ### radioToClient
-POST http://notification-server/server/radioToClient HTTP/1.1
+POST http://localhost:8080/server/radioToClient
 Content-Type: application/json
 
 {
@@ -91,7 +91,7 @@ Content-Type: application/json
 }
 
 ### 注册客户端
-POST http://notification-server/server/register HTTP/1.1
+POST http://localhost:8080/server/register
 Content-Type: application/json
 
 {
@@ -107,7 +107,7 @@ Content-Type: application/json
 }
 
 ### 发送信息
-POST http://notification-server/server/sendMessage HTTP/1.1
+POST http://localhost:8080/server/sendMessage
 Content-Type: application/json
 
 {
