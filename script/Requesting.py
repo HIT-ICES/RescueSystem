@@ -92,3 +92,16 @@ if __name__ == '__main__':
         _requests = parse_http_file(os.path.join(Config.RequestsDir, http_file))
         for request in _requests:
             execute_request(request)
+
+
+
+# import concurrent.futures
+
+
+# if __name__ == '__main__':
+#     requests_data = []
+#     for http_file in os.listdir(Config.RequestsDir):
+#         requests_data.extend(parse_http_file(os.path.join(Config.RequestsDir, http_file)))
+
+#     with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+#         executor.map(execute_request, requests_data)
