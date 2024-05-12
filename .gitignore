@@ -1,5 +1,6 @@
 target/
 __pycache__/
+server/build/
 *.jar
 
 gateway/nginx.conf
