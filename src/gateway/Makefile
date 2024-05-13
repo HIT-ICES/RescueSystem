@@ -24,6 +24,9 @@ K8S_PROFILE = IMAGE_NAME=$(IMAGE_NAME) APP_NAME=$(APP_NAME) \
 
 .PHONY: default install restart start stop logs uninstall deploy sh status
 
+clean:
+	rm nginx.conf
+
 nginx.conf:
 	$(PY) ../script/MakeGatewayConf.py
 	
