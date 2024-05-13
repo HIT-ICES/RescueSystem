@@ -38,10 +38,10 @@ maven:
 default: maven
 	$(DOCKER) build -f $(DOCKERFILE_DIR)/Dockerfile -t $(IMAGE_NAME) $(WORK_DIR)
 
-publish: default configure
+publish: default
 	$(DOCKER) push $(IMAGE_NAME)
 
-install:
+install: configure
 	$(K8S_PROFILE) | $(K8S) apply -f -
 
 uninstall:
