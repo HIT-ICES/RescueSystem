@@ -5,6 +5,10 @@ metadata:
 data:
   application.yaml: |
     spring:
+      application:
+        name: Gateway
       cloud:
         gateway:
           routes: []
+    server:
+      port: 8080
