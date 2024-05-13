@@ -1,6 +1,6 @@
 # App Conf.
 APP_NAME = gateway
-VERSION = 1.0
+VERSION = 2.0
 PROFILE = withoutsql
 
 # Project Conf.
