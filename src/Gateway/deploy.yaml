@@ -37,7 +37,6 @@ spec:
           ports:
             - containerPort: 8080 # change this to the desired port if needed
               name: http # change this to the desired name if needed
-              apiVersion: v1
           resources: {}
           volumeMounts:
             - name: config-volume
