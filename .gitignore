@@ -3,4 +3,4 @@ __pycache__/
 server/build/
 *.jar
 
-gateway/nginx.conf
+src/Gateway/gateway.yaml

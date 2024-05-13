@@ -4,7 +4,7 @@ VERSION = 1.0
 PROFILE = withoutsql
 
 # Project Conf.
-PROJECT_ROOT ?=..
+PROJECT_ROOT ?=../..
 PROJECT ?= rescue-system-redive
 REPO_NAME ?= 192.168.1.199:5000/rescue-system-2024
 
@@ -12,10 +12,12 @@ REPO_NAME ?= 192.168.1.199:5000/rescue-system-2024
 # Build Conf.
 IMAGE_NAME = $(REPO_NAME)/$(APP_NAME):v${VERSION}
 K8S_CONF_TMPL ?= deploy.yaml
+K8S_GATEWAY ?= gateway.yaml
 DOCKERFILE_DIR = .
 WORK_DIR = .
 DOCKER = docker
-PY ?= python
+MAVEN = mvn
+PY ?= python3
 K8S = kubectl -n $(PROJECT)
 K8S_REPLICA ?= 1
 K8S_PROFILE = IMAGE_NAME=$(IMAGE_NAME) APP_NAME=$(APP_NAME) \
@@ -24,16 +26,19 @@ K8S_PROFILE = IMAGE_NAME=$(IMAGE_NAME) APP_NAME=$(APP_NAME) \
 
 .PHONY: default install restart start stop logs uninstall deploy sh status
 
-clean:
-	rm nginx.conf
+gateway-conf:
+	$(PY) $(PROJECT_ROOT)/script/MakeGatewayConf.py
 
-nginx.conf:
-	$(PY) ../script/MakeGatewayConf.py
+configure: gateway-conf
+	$(K8S) apply -f $(K8S_GATEWAY)
+
+maven:
+	$(MAVEN) package
 	
-default: nginx.conf
+default: maven
 	$(DOCKER) build -f $(DOCKERFILE_DIR)/Dockerfile -t $(IMAGE_NAME) $(WORK_DIR)
 
-publish: default
+publish: default configure
 	$(DOCKER) push $(IMAGE_NAME)
 
 install:

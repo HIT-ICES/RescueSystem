@@ -1,52 +1,52 @@
 from ProjectInfoAutomation import Projects
 import Config
+import yaml
 
-with open(Config.GatewayTemplate, 'r', encoding='utf8') as gateway:
-    origin = "\n".join(gateway.readlines())
 
-tmpl_prefix = ' '*8
+with open(Config.GatewayTemplate, 'r', encoding='utf8') as f:
+    kube_conf_map = yaml.safe_load(f)
+
+proxy_conf = yaml.safe_load(kube_conf_map['data']['application.yaml'])
+
+routes = proxy_conf['spring']['cloud']['gateway']['routes']
 
 
 def build_proxy_of_swagger(server):
-    return [
-        f'{tmpl_prefix}location /swagger/{server} {{',
-        f'{tmpl_prefix}    proxy_pass http://{server}:8080/;',
-        f'{tmpl_prefix}    proxy_set_header x-b3-traceid $http_x_b3_traceid;',
-        f'{tmpl_prefix}    proxy_set_header x-b3-spanid $http_x_b3_spanid;',
-        f'{tmpl_prefix}    proxy_set_header x-b3-parentspanid $http_x_b3_parentspanid;',
-        f'{tmpl_prefix}    proxy_set_header x-b3-sampled $http_x_b3_sampled;',
-        f'{tmpl_prefix}    proxy_set_header x-b3-flags $http_x_b3_flags;',
-        f'{tmpl_prefix}    proxy_set_header uber-trace-id $http_uber_trace_id;',
-        f'{tmpl_prefix}}}',
-        ''
+    return {
+        "id": f'{server}_swagger',
+        'uri': f'http://{server}:8080',
+        'predicates': [
+            f'Path=/swagger/{server}/**'
+        ],
+        'filters': [
+            f'RewritePath=/swagger/{server}/(?<path>.*), /$\{{path}}'
+        ]
+    }
+
+
+def build_proxy_of_route(server, routes):
+
+    predicates = [
+        f'Path={route}/**' for route in routes
     ]
+    return {
+        "id": f'{server}_controllers',
+        'uri': f'http://{server}:8080',
+        'predicates': predicates
+    }
 
 
-def build_proxy_of_route(route, server):
-    if not route.startswith('/'):
-        route = '/' + route
-    return [
-        f'{tmpl_prefix}location {route} {{',
-        f'{tmpl_prefix}    proxy_pass http://{server}:8080;',
-        f'{tmpl_prefix}    proxy_set_header x-b3-traceid $http_x_b3_traceid;',
-        f'{tmpl_prefix}    proxy_set_header x-b3-spanid $http_x_b3_spanid;',
-        f'{tmpl_prefix}    proxy_set_header x-b3-parentspanid $http_x_b3_parentspanid;',
-        f'{tmpl_prefix}    proxy_set_header x-b3-sampled $http_x_b3_sampled;',
-        f'{tmpl_prefix}    proxy_set_header x-b3-flags $http_x_b3_flags;',
-        f'{tmpl_prefix}    proxy_set_header uber-trace-id $http_uber_trace_id;',
-        f'{tmpl_prefix}}}',
-        ''
-    ]
-
-
-proxy_pass = [""]
 
 for project in Projects:
-    proxy_pass += build_proxy_of_swagger(project.Name)
-    for route in project.Routes:
-        proxy_pass += build_proxy_of_route(route, project.Name)
+    routes.append(build_proxy_of_swagger(project.Name))
+    routes.append(build_proxy_of_route(project.Name, project.Routes))
 
-origin = origin.replace("$$PROXY_PASS$$", "\n".join(proxy_pass))
+proxy_conf['spring']['cloud']['gateway']['routes']=routes
+
+
+
+kube_conf_map['data']['application.yaml']=yaml.dump(proxy_conf)
+
 
 with open(Config.Gateway, 'w', encoding='utf8') as gateway:
-    gateway.write(origin)
+    yaml.safe_dump(kube_conf_map, gateway)
