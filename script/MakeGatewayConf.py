@@ -38,8 +38,16 @@ def build_proxy_of_route(server, routes):
 
 
 for project in Projects:
-    routes.append(build_proxy_of_swagger(project.Name))
-    routes.append(build_proxy_of_route(project.Name, project.Routes))
+    route= build_proxy_of_swagger(project.Name)
+    if len(route["predicates"])!=0:
+        routes.append(route)
+    else:
+        print("WARNING: empty route predicate: {}".format(project.Name))
+    route= build_proxy_of_route(project.Name, project.Routes)
+    if len(route["predicates"])!=0:
+        routes.append(route)
+    else:
+        print("WARNING: empty route predicate: {}".format(project.Name))
 
 proxy_conf['spring']['cloud']['gateway']['routes']=routes
 
